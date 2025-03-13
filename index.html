@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Endorsement</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to the CSS file -->
+</head>
+<body>
+
+    <header>
+        <h1>SuperTech Smartwatch</h1>
+        <nav>
+            <ul>
+                <li><a href="#description">Description</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+                <li><a href="#faqs">FAQs</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Product Section -->
+    <section id="product">
+        <img src="images/realistic-fitness-trackers_23-2148530529.avif" alt="SuperTech Smartwatch">
+        <h2>SuperTech Smartwatch</h2>
+        <p id="description-text">The latest innovation in wearable technology. Track your health, stay connected, and look stylish all at once.</p>
+        <p><strong>Price: $199.99</strong></p>
+        <button id="buy-now-btn">Buy Now</button>
+    </section>
+
+    <!-- Hidden Sections that will be revealed after clicking the "Buy Now" button -->
+    <section id="product-details" style="display: none;">
+        <h2>Product Details</h2>
+        <p>The latest innovation in wearable technology. Track your health, stay connected, and look stylish all at once.</p>
+        <p><strong>Price: $199.99</strong></p>
+    </section>
+
+    <section id="faqs" style="display: none;">
+        <h2>Frequently Asked Questions</h2>
+        <p><strong>Q: Is this smartwatch waterproof?</strong></p>
+        <p>A: Yes, it is water-resistant up to 50 meters.</p>
+        <p><strong>Q: Does it work with both Android and iOS?</strong></p>
+        <p>A: Yes, it is compatible with both operating systems.</p>
+    </section>
+
+    <section id="contact" style="display: none;">
+        <h2>Contact Us</h2>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+            <label for="message">Message:</label>
+            <textarea id="message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </section>
+
+    <!-- Return Button -->
+    <button id="return-btn" style="display: none;">Return to Product</button>
+
+    <footer>
+        <p>&copy; 2025 SuperTech Inc.</p>
+    </footer>
+
+    <script>
+        // JavaScript to handle the "Buy Now" button click and show the hidden sections
+        document.getElementById('buy-now-btn').addEventListener('click', function() {
+            // Hide the product section
+            document.getElementById('product').style.display = 'none';
+
+            // Reveal the product details, FAQs, and Contact sections
+            document.getElementById('product-details').style.display = 'block';
+            document.getElementById('faqs').style.display = 'block';
+            document.getElementById('contact').style.display = 'block';
+
+            // Show the Return button
+            document.getElementById('return-btn').style.display = 'inline-block';
+        });
+
+        // JavaScript to handle the "Return" button click and go back to the original product section
+        document.getElementById('return-btn').addEventListener('click', function() {
+            // Hide the additional sections
+            document.getElementById('product-details').style.display = 'none';
+            document.getElementById('faqs').style.display = 'none';
+            document.getElementById('contact').style.display = 'none';
+
+            // Show the product section again
+            document.getElementById('product').style.display = 'block';
+
+            // Hide the Return button
+            document.getElementById('return-btn').style.display = 'none';
+        });
+    </script>
+
+</body>
+</html>
